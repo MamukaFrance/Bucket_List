@@ -5,5 +5,8 @@
 
 {% block body %}
     <h1>Détail d'un wish...  Titre de l'idée ici !</h1>
-    <p>{{ wishes[id] }}</p>
+    <h1>{{ wishe.title }}</h1>
+    <p>Created by author {{ wishe.author }} on {{ wishe.dateCreated |date('d/m/Y') }}</p>
+    <p>description {{ wishe.title }}</p>
+    <p>{{ wishe.description }}</p>
 {% endblock %}
