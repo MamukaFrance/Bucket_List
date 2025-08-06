@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>Add your wishes !</h1>
+
+    {{ form_start(wisheForm) }}
+
+    <div class="uk-margin">
+        {{ form_label(wisheForm.title, 'Votre souhait', {'label_attr': {'class': 'uk-form-label'}}) }}
+        {{ form_widget(wisheForm.title, {'attr': {'class': 'uk-input'}}) }}
+    </div>
+
+    <div class="uk-margin">
+        {{ form_label(wisheForm.description, 'Veuillez écrire votre souhait', {'label_attr': {'class': 'uk-form-label'}}) }}
+        {{ form_widget(wisheForm.description, {'attr': {'class': 'uk-textarea'}}) }}
+    </div>
+
+    <div class="uk-margin">
+        {{ form_label(wisheForm.author, 'Votre nom', {'label_attr': {'class': 'uk-form-label'}}) }}
+        {{ form_widget(wisheForm.author, {'attr': {'class': 'uk-input'}}) }}
+    </div>
+
+    <div class="uk-margin">
+        {{ form_label(wisheForm.category) }}
+        {{ form_widget(wisheForm.category) }}
+    </div>
+    <button type="submit" class="uk-button uk-button-primary uk-margin-small-top">Envoyer</button>
+
+    {{ form_end(wisheForm) }}
+
+
+{% endblock %}
+
+{% block title %}
+    (parent) | creat
+{% endblock %}
+
