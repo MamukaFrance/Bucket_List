@@ -56,23 +56,8 @@ final class WishController extends AbstractController
         }
 
         return $this->render('wish/creat.html.twig', [
-            'wisheForm' => $form->createView(),
+            'wishForm' => $form->createView(),
         ]);
-    }
-
-    #[Route('/register  ', name: 'wish_register', requirements: ['id' => '\d+'], methods: ['GET', 'POST'])]
-    public function register (Request $request): Response
-    {
-        $user = new User();
-        $userForm = $this->createForm(UserType::class, $user);
-        $userForm->handleRequest($request);
-        return $this->render('wish/register.html.twig');
-    }
-
-    #[Route('/connection  ', name: 'wish_connection', requirements: ['id' => '\d+'], methods: ['GET'])]
-    public function connection (): Response
-    {
-        return $this->render('wish/connection.html.twig');
     }
 
 

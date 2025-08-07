@@ -4,30 +4,30 @@
 
     <h1>Add your wishes !</h1>
 
-    {{ form_start(wisheForm) }}
+    {{ form_start(wishForm) }}
 
     <div class="uk-margin">
-        {{ form_label(wisheForm.title, 'Votre souhait', {'label_attr': {'class': 'uk-form-label'}}) }}
-        {{ form_widget(wisheForm.title, {'attr': {'class': 'uk-input'}}) }}
+        {{ form_label(wishForm.title, 'Votre souhait', {'label_attr': {'class': 'uk-form-label'}}) }}
+        {{ form_widget(wishForm.title, {'attr': {'class': 'uk-input'}}) }}
     </div>
 
     <div class="uk-margin">
-        {{ form_label(wisheForm.description, 'Veuillez écrire votre souhait', {'label_attr': {'class': 'uk-form-label'}}) }}
-        {{ form_widget(wisheForm.description, {'attr': {'class': 'uk-textarea'}}) }}
+        {{ form_label(wishForm.description, 'Veuillez écrire votre souhait', {'label_attr': {'class': 'uk-form-label'}}) }}
+        {{ form_widget(wishForm.description, {'attr': {'class': 'uk-textarea'}}) }}
     </div>
 
     <div class="uk-margin">
-        {{ form_label(wisheForm.author, 'Votre nom', {'label_attr': {'class': 'uk-form-label'}}) }}
-        {{ form_widget(wisheForm.author, {'attr': {'class': 'uk-input'}}) }}
+        {{ form_label(wishForm.author, 'Votre nom', {'label_attr': {'class': 'uk-form-label'}}) }}
+        {{ form_widget(wishForm.author, {'attr': {'class': 'uk-input', 'value': app.user ? app.user.UserName : ''}})}}
     </div>
 
     <div class="uk-margin">
-        {{ form_label(wisheForm.category) }}
-        {{ form_widget(wisheForm.category) }}
+        {{ form_label(wishForm.category) }}
+        {{ form_widget(wishForm.category) }}
     </div>
     <button type="submit" class="uk-button uk-button-primary uk-margin-small-top">Envoyer</button>
 
-    {{ form_end(wisheForm) }}
+    {{ form_end(wishForm) }}
 
 
 {% endblock %}

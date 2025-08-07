@@ -2,13 +2,17 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\User;
 use App\Entity\Wish;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class WiishFixtures extends Fixture
 {
+    public function __construct(private UserPasswordHasherInterface $passwordHasher){
+    }
     public function load(ObjectManager $manager): void
     {
         // $product = new Product();
@@ -30,6 +34,19 @@ class WiishFixtures extends Fixture
 
         dump($wish);
 
+        $manager->flush();
+
+        // USER PAR DEFAUT
+        $user = new User();
+        $user->setUsername("user");
+
+        // générer un mot de passe
+        $hashedPassword = $this->passwordHasher->hashPassword($user, "123456");
+
+        // setter le mot de passe généré
+        $user->setPassword($hashedPassword);
+
+        $manager->persist($user);
         $manager->flush();
     }
 }
