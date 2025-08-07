@@ -20,12 +20,12 @@ final class Version20250731132821 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE wishe CHANGE title title VARCHAR(250) NOT NULL, CHANGE description description LONGTEXT DEFAULT NULL, CHANGE author author VARCHAR(50) NOT NULL, CHANGE is_published is_published TINYINT(1) DEFAULT 0 NOT NULL');
+        $this->addSql('ALTER TABLE wish CHANGE title title VARCHAR(250) NOT NULL, CHANGE description description LONGTEXT DEFAULT NULL, CHANGE author author VARCHAR(50) NOT NULL, CHANGE is_published is_published TINYINT(1) DEFAULT 0 NOT NULL');
     }
 
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE wishe CHANGE title title VARCHAR(255) NOT NULL, CHANGE description description VARCHAR(255) DEFAULT NULL, CHANGE author author VARCHAR(255) NOT NULL, CHANGE is_published is_published TINYINT(1) NOT NULL');
+        $this->addSql('ALTER TABLE wish CHANGE title title VARCHAR(255) NOT NULL, CHANGE description description VARCHAR(255) DEFAULT NULL, CHANGE author author VARCHAR(255) NOT NULL, CHANGE is_published is_published TINYINT(1) NOT NULL');
     }
 }

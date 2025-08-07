@@ -6,7 +6,7 @@ use App\Entity\User;
 use App\Entity\Wish;
 use App\Form\UserType;
 use App\Form\WishType;
-use App\Repository\WisheRepository;
+use App\Repository\WishRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Attribute\Route;
 final class WishController extends AbstractController
 {
     #[Route('/', name: 'list', methods: ['GET'])]
-    public function list(WisheRepository $wisheRepository): Response
+    public function list(WishRepository $wisheRepository): Response
     {
        //$wishes = $wisheRepository->findAll();
        $wishes = $wisheRepository->findByCreateDate();

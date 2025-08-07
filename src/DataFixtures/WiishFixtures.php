@@ -40,6 +40,8 @@ class WiishFixtures extends Fixture
         $user = new User();
         $user->setUsername("user");
 
+        $user->setEmail("user@gmail.com");
+
         // générer un mot de passe
         $hashedPassword = $this->passwordHasher->hashPassword($user, "123456");
 
